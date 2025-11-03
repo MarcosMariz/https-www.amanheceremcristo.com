@@ -1,0 +1,375 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF6C2;
+    /* Bege suave */
+    color: #3b2a19;
+    /* Marrom escuro */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #5C3B1C;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    border-radius: 8px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f5e3a1;
+}
+
+/* Hero / Banner */
+.hero {
+    /* vídeo já cobre essa função */
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+
+.hero-text {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #5C3B1C;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #5C3B1C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #3b2a19;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #5C3B1C;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #5C3B1C;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background-color: #5C3B1C;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-text {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 1;
+    max-width: 600px;
+}
+
+/* Carrossel de Imagens */
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: 30px auto;
+    overflow: hidden;
+    text-align: center;
+    aspect-ratio: 9 / 16;
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* mostra imagem inteira sem corte */
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.carousel-img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(92, 59, 28, 0.6);
+    /* tom marrom com transparência */
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s;
+    border-radius: 50%;
+}
+
+.carousel button:hover {
+    background-color: rgba(92, 59, 28, 0.9);
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+.depoimentos .comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* distância entre comentários */
+}
+
+.comentario {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff8dc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+.comentario img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #5C3B1C;
+}
+
+.texto-comentario {
+    flex: 1;
+}
+
+.texto-comentario p {
+    margin: 0;
+    font-style: italic;
+}
+
+.texto-comentario span {
+    display: block;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #5C3B1C;
+    text-align: right;
+}
+
+.icones-contato {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.icone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #5C3B1C;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.icone i {
+    font-size: 1.5rem;
+}
+
+.icone:hover {
+    background-color: #3b2a19;
+}
+
+.comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Espaçamento entre os comentários */
+}
+
+.comentario {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff8dc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    /* Espaço entre imagem e texto */
+}
+
+.comentario img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #5C3B1C;
+}
+
+.texto-comentario {
+    flex: 1;
+}
+
+.texto-comentario p {
+    margin: 0;
+    font-style: italic;
+}
+
+.texto-comentario span {
+    display: block;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #5C3B1C;
+    text-align: right;
+}
+
+.localizacao {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.mapa-container {
+  margin: 20px auto 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+}
+
+.mapa-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
